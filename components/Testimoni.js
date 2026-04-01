@@ -10,40 +10,31 @@ import ArrowNext from "../public/assets/Icon/eva_arrow-next-fill.svg";
 const Testimoni = ({
   listTestimoni = [
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
-      rating: "4.5",
+      name: "Kustomer 1",
+      image: "/assets/people-1.png",
+      city: "Jakarta",
+      country: "Indonesia",
+      rating: "5",
       testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
+      name: "Kustomer 2",
+      image: "/assets/people-2.png",
+      city: "Bandung",
+      country: "Indonesia",
       rating: "4.5",
       testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
-      name: "iezh Robert",
+      name: "Kustomer 3",
       image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
-      rating: "4.5",
+      city: "Surabaya",
+      country: "Indonesia",
+      rating: "4.3",
       testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
-    },
-    {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
-      rating: "4.5",
-      testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
   ],
 }) => {
@@ -121,22 +112,24 @@ const Testimoni = ({
           </div>
         ))}
       </Slider>
-      <div className="flex w-full items-center justify-end">
-        <div className="flex flex-none justify-between w-auto mt-14">
-          <div
-            className="mx-4 flex items-center justify-center h-14 w-14 rounded-full bg-white border-orange-500 border hover:bg-orange-500 hover:text-white-500 transition-all text-orange-500 cursor-pointer"
-            onClick={sliderRef?.slickPrev}
-          >
-            <ArrowBack className="h-6 w-6 " />
-          </div>
-          <div
-            className="flex items-center justify-center h-14 w-14 rounded-full bg-white border-orange-500 border hover:bg-orange-500 hover:text-white-500 transition-all text-orange-500 cursor-pointer"
-            onClick={sliderRef?.slickNext}
-          >
-            <ArrowNext className="h-6 w-6" />
+      {listTestimoni.length > 3 && (
+        <div className="flex w-full items-center justify-end">
+          <div className="flex flex-none justify-between w-auto mt-14">
+            <div
+              className="mx-4 flex items-center justify-center h-14 w-14 rounded-full bg-white border-orange-500 border hover:bg-orange-500 hover:text-white-500 transition-all text-orange-500 cursor-pointer"
+              onClick={sliderRef?.slickPrev}
+            >
+              <ArrowBack className="h-6 w-6 " />
+            </div>
+            <div
+              className="flex items-center justify-center h-14 w-14 rounded-full bg-white border-orange-500 border hover:bg-orange-500 hover:text-white-500 transition-all text-orange-500 cursor-pointer"
+              onClick={sliderRef?.slickNext}
+            >
+              <ArrowNext className="h-6 w-6" />
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
