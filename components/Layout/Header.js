@@ -126,9 +126,14 @@ const Header = () => {
       </header>
       {/* Mobile Navigation */}
 
-      <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-4 sm:px-8 shadow-t ">
-        <div className="bg-white-500 sm:px-3">
-          <ul className="flex w-full justify-between items-start text-black-500">
+      <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-0 shadow-t">
+        <div className="bg-white-500 w-full">
+          <ul
+            className="
+            flex w-full items-end text-black-500 overflow-x-auto no-scrollbar
+            justify-center
+            "
+          >
             <LinkScroll
               activeClass="active"
               to="about"
@@ -139,14 +144,14 @@ const Header = () => {
                 setActiveLink("about");
               }}
               className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all text-center" +
+                "flex-1 min-w-[54px] max-w-[70px] flex-shrink-0 mx-0 px-1 py-2 flex flex-col items-center text-[10px] border-t-2 transition-all text-center whitespace-nowrap" +
                 (activeLink === "about"
-                  ? "  border-orange-500 text-orange-500"
+                  ? " border-orange-500 text-orange-500"
                   : " border-transparent")
               }
             >
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -159,7 +164,7 @@ const Header = () => {
                   d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              Tentang Kami
+              Tentang
             </LinkScroll>
             <LinkScroll
               activeClass="active"
@@ -171,14 +176,14 @@ const Header = () => {
                 setActiveLink("feature");
               }}
               className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all text-center" +
+                "flex-1 min-w-[54px] max-w-[70px] flex-shrink-0 mx-0 px-1 py-2 flex flex-col items-center text-[10px] border-t-2 transition-all text-center whitespace-nowrap" +
                 (activeLink === "feature"
-                  ? "  border-orange-500 text-orange-500"
-                  : " border-transparent ")
+                  ? " border-orange-500 text-orange-500"
+                  : " border-transparent")
               }
             >
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -191,7 +196,7 @@ const Header = () => {
                   d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
                 />
               </svg>
-              Layanan Kami
+              Layanan
             </LinkScroll>
             <LinkScroll
               activeClass="active"
@@ -203,13 +208,13 @@ const Header = () => {
                 setActiveLink("reason");
               }}
               className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all text-center" +
+                "flex-1 min-w-[54px] max-w-[70px] flex-shrink-0 mx-0 px-1 py-2 flex flex-col items-center text-[10px] border-t-2 transition-all text-center whitespace-nowrap" +
                 (activeLink === "reason"
-                  ? "  border-orange-500 text-orange-500"
-                  : " border-transparent ")
+                  ? " border-orange-500 text-orange-500"
+                  : " border-transparent")
               }
             >
-              <MessageCircleQuestionMark className="w-6 h-6" />
+              <MessageCircleQuestionMark className="w-5 h-5" />
               Alasan
             </LinkScroll>
             <LinkScroll
@@ -222,14 +227,14 @@ const Header = () => {
                 setActiveLink("testimoni");
               }}
               className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all text-center" +
+                "flex-1 min-w-[54px] max-w-[70px] flex-shrink-0 mx-0 px-1 py-2 flex flex-col items-center text-[10px] border-t-2 transition-all text-center whitespace-nowrap" +
                 (activeLink === "testimoni"
-                  ? "  border-orange-500 text-orange-500"
-                  : " border-transparent ")
+                  ? " border-orange-500 text-orange-500"
+                  : " border-transparent")
               }
             >
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -242,7 +247,7 @@ const Header = () => {
                   d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                 />
               </svg>
-              Testimoni Kami
+              Testimoni
             </LinkScroll>
             <LinkScroll
               activeClass="active"
@@ -254,14 +259,14 @@ const Header = () => {
                 setActiveLink("contact");
               }}
               className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all text-center" +
+                "flex-1 min-w-[54px] max-w-[70px] flex-shrink-0 mx-0 px-1 py-2 flex flex-col items-center text-[10px] border-t-2 transition-all text-center whitespace-nowrap" +
                 (activeLink === "contact"
-                  ? "  border-orange-500 text-orange-500"
-                  : " border-transparent ")
+                  ? " border-orange-500 text-orange-500"
+                  : " border-transparent")
               }
             >
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -274,7 +279,7 @@ const Header = () => {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 17.72V21a2 2 0 01-2 2h-1C9.716 23 3 16.284 3 8V5z"
                 />
               </svg>
-              Contact
+              Kontak
             </LinkScroll>
           </ul>
         </div>
