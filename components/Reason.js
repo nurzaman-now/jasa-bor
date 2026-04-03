@@ -75,30 +75,33 @@ const Reason = () => {
               ketahanan jangka panjang.
             </motion.p>
           </ScrollAnimationWrapper>
-          <div className={`grid gap-5 ${
-            reasons.length <= 4
-              ? `grid-cols-${reasons.length} sm:grid-cols-${reasons.length} md:grid-cols-${reasons.length} lg:grid-cols-${reasons.length}`
-              : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'
-          }`}>
-            {reasons.map((reason) => (
-              <ScrollAnimationWrapper className="flex justify-center">
-                <motion.div
-                  variants={scrollAnimation}
-                  className="flex flex-col justify-center items-center border-2 border-gray-500 bg-white-500 rounded-xl py-16 px-6 lg:px-8"
-                  whileHover={{
-                    scale: 1.1,
-                    transition: {
-                      duration: 0.2,
-                    },
-                  }}
-                >
-                  <div className="p-4 lg:p-0">{reason.icon}</div>
-                  <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                    {reason.title}
-                  </p>
-                  <p className="text-black-500">{reason.description}</p>
-                </motion.div>
-              </ScrollAnimationWrapper>
+          <div className="flex flex-wrap justify-center gap-5 w-full">
+            {reasons.map((reason, idx) => (
+              <div
+                key={idx}
+                className="flex-1 min-w-[230px] max-w-xs mx-3 mb-6 flex"
+              >
+                <ScrollAnimationWrapper className="flex justify-center w-full">
+                  <motion.div
+                    variants={scrollAnimation}
+                    className="flex flex-col justify-center items-center border-2 border-orange-500 bg-white rounded-xl py-10 px-4 w-full h-full min-h-[360px]" // Atur tinggi minimum agar semua card sama tinggi
+                    whileHover={{
+                      scale: 1.07,
+                      transition: { duration: 0.2 },
+                    }}
+                  >
+                    <div className="p-4 flex items-center justify-center">
+                      {reason.icon}
+                    </div>
+                    <p className="text-lg text-black-600 font-semibold my-2 text-center leading-snug">
+                      {reason.title}
+                    </p>
+                    <p className="text-black-500 text-center text-sm">
+                      {reason.description}
+                    </p>
+                  </motion.div>
+                </ScrollAnimationWrapper>
+              </div>
             ))}
           </div>
         </div>
