@@ -121,7 +121,7 @@ const Reason = () => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col w-full my-16">
+        <div className="flex flex-col w-full my-16" id="problems-solution">
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
@@ -138,10 +138,7 @@ const Reason = () => {
               tepat dan efisien untuk setiap masalah yang Anda hadapi.
             </motion.p>
           </ScrollAnimationWrapper>
-          <div
-            className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto scroll-mt-[100px]"
-            id="problems-solution"
-          >
+          <div className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto scroll-mt-[100px]">
             <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-16">
               <ScrollAnimationWrapper>
                 <motion.div

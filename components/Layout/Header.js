@@ -87,6 +87,44 @@ const Header = () => {
             </LinkScroll>
             <LinkScroll
               activeClass="active"
+              to="problems-solution"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              offset={NAV_SCROLL_OFFSET}
+              onSetActive={() => {
+                setActiveLink("problems-solution");
+              }}
+              className={
+                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                (activeLink === "problems-solution"
+                  ? " text-primary animation-active "
+                  : " text-black-500 hover:text-primary ")
+              }
+            >
+              Masalah & Solusi
+            </LinkScroll>
+            <LinkScroll
+              activeClass="active"
+              to="gallery"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              offset={NAV_SCROLL_OFFSET}
+              onSetActive={() => {
+                setActiveLink("gallery");
+              }}
+              className={
+                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                (activeLink === "gallery"
+                  ? " text-primary animation-active "
+                  : " text-black-500 hover:text-primary ")
+              }
+            >
+              Galeri
+            </LinkScroll>
+            <LinkScroll
+              activeClass="active"
               to="testimoni"
               spy={true}
               smooth={true}
