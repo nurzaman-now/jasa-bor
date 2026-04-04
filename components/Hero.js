@@ -4,31 +4,46 @@ import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import { Link as LinkScroll } from "react-scroll";
-import { UserIcon, MapPinIcon, ServerIcon } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLocationDot,
+  faBriefcase,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Hero = ({
   listUser = [
     {
       name: "Kustomer",
       number: "390",
-      icon: <UserIcon className="text-orange-500" />,
+      icon: <FontAwesomeIcon icon={faUser} className="text-primary w-6 h-6" />,
     },
     {
       name: "Proyek",
       number: "20",
-      icon: <MapPinIcon className="text-orange-500" />,
+      icon: (
+        <FontAwesomeIcon
+          icon={faLocationDot}
+          className="text-primary w-6 h-6"
+        />
+      ),
     },
     {
       name: "Pengalaman",
       number: "50 Tahun",
-      icon: <ServerIcon className="text-orange-500" />,
+      icon: (
+        <FontAwesomeIcon icon={faBriefcase} className="text-primary w-6 h-6" />
+      ),
     },
   ],
 }) => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
   return (
-    <div className="max-w-screen-xl mt-24 px-8 xl:px-16 mx-auto" id="about">
+    <div
+      className="max-w-screen-xl mt-24 px-8 xl:px-16 mx-auto scroll-mt-[100px]"
+      id="about"
+    >
       <ScrollAnimationWrapper>
         <motion.div
           className="grid grid-flow-row sm:grid-flow-col grid-rows-2 md:grid-rows-1 sm:grid-cols-2 gap-8 py-6 sm:py-16"
@@ -48,8 +63,9 @@ const Hero = ({
               spy={true}
               smooth={true}
               duration={1000}
+              offset={-100}
               className={
-                "py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-orange-500 hover:shadow-orange-md transition-all outline-none cursor-pointer"
+                "py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-primary hover:shadow-primary-md transition-all outline-none cursor-pointer"
               }
             >
               Hubungi Kami
@@ -79,7 +95,7 @@ const Hero = ({
               variants={scrollAnimation}
             >
               <div className="flex mx-auto w-40 sm:w-auto">
-                <div className="flex items-center justify-center bg-orange-100 w-12 h-12 mr-6 rounded-full">
+                <div className="flex items-center justify-center bg-primary-100 w-12 h-12 mr-6 rounded-full">
                   {listUsers.icon}
                 </div>
                 <div className="flex flex-col">

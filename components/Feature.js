@@ -3,6 +3,8 @@ import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 const features = [
   "Jasa Bor Air Standar dengan kedalaman – /+ 30 M.",
@@ -21,7 +23,7 @@ const Feature = () => {
 
   return (
     <div
-      className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto"
+      className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto scroll-mt-[100px]"
       id="feature"
     >
       <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8 p  y-8 my-12">
@@ -49,7 +51,7 @@ const Feature = () => {
               Kami menyediakan berbagai layanan pengeboran yang sesuai dengan
               kebutuhan Anda.
             </p>
-            <ul className="text-black-500 self-start list-inside ml-8">
+            <ul className="text-black-500 self-start list-inside">
               {features.map((feature, index) => (
                 <motion.li
                   className="relative circle-check custom-list"
@@ -63,7 +65,13 @@ const Feature = () => {
                     },
                   }}
                 >
-                  {feature}
+                  <span className="flex items-center gap-2">
+                    <FontAwesomeIcon
+                      icon={faCircleCheck}
+                      className="text-primary w-4 h-4"
+                    />
+                    {feature}
+                  </span>
                 </motion.li>
               ))}
             </ul>

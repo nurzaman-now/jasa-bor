@@ -73,18 +73,21 @@ const SeoHead = (props) => {
           <meta name="author" property="article:author" content={meta.author} />
         </>
       )}
-      {/* Favicons */}
+      {/* Favicons — path mengikuti file di public/favicon/ */}
       {favicons.map((linkProps) => (
-        <link key={linkProps.href} {...linkProps} />
+        <link
+          key={`${linkProps.rel}-${linkProps.href}-${linkProps.sizes ?? ""}-${linkProps.type ?? ""}`}
+          {...linkProps}
+        />
       ))}
       {/* Windows 8 app icon */}
-      <meta name="msapplication-TileColor" content="#F53838" />
+      <meta name="msapplication-TileColor" content="#EAB308" />
       <meta
         name="msapplication-TileImage"
-        content="/favicon/ms-icon-144x144.png"
+        content="/favicon/web-app-manifest-192x192.png"
       />
       {/* Accent color on supported browser */}
-      <meta name="theme-color" content="#F53838" />
+      <meta name="theme-color" content="#EAB308" />
     </Head>
   );
 };
@@ -92,30 +95,14 @@ const SeoHead = (props) => {
 // Favicons, other icons, and manifest definition
 const favicons = [
   {
-    rel: "apple-touch-icon",
-    sizes: "180x180",
-    href: "/favicon/apple-icon-180x180.png",
-  },
-  {
-    rel: "mask-icon",
-    href: "/favicon/safari-pinned-tab.svg",
-    color: "#F53838",
+    rel: "icon",
+    type: "image/svg+xml",
+    href: "/favicon/favicon.svg",
   },
   {
     rel: "icon",
+    type: "image/x-icon",
     href: "/favicon/favicon.ico",
-  },
-  {
-    rel: "icon",
-    type: "image/png",
-    sizes: "16x16",
-    href: "/favicon/favicon-16x16.png",
-  },
-  {
-    rel: "icon",
-    type: "image/png",
-    sizes: "32x32",
-    href: "/favicon/favicon-32x32.png",
   },
   {
     rel: "icon",
@@ -124,16 +111,20 @@ const favicons = [
     href: "/favicon/favicon-96x96.png",
   },
   {
+    rel: "apple-touch-icon",
+    href: "/favicon/apple-touch-icon.png",
+  },
+  {
     rel: "icon",
     type: "image/png",
     sizes: "192x192",
-    href: "/favicon/android-icon-192x192.png",
+    href: "/favicon/web-app-manifest-192x192.png",
   },
   {
     rel: "icon",
     type: "image/png",
     sizes: "512x512",
-    href: "/favicon/android-icon-512x512.png",
+    href: "/favicon/web-app-manifest-512x512.png",
   },
   {
     rel: "manifest",

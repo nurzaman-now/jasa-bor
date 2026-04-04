@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link as LinkScroll } from "react-scroll";
 import Logo from "../../public/assets/Logo.svg";
-import { MessageCircleQuestionMark } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
+
+/** Jarak dari tepi atas viewport untuk semua anchor scroll (react-scroll: nilai negatif). */
+const NAV_SCROLL_OFFSET = -100;
+
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
   const [scrollActive, setScrollActive] = useState(false);
@@ -29,14 +34,15 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={NAV_SCROLL_OFFSET}
               onSetActive={() => {
                 setActiveLink("about");
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "about"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 a")
+                  ? " text-primary animation-active "
+                  : " text-black-500 hover:text-primary ")
               }
             >
               Tentang Kami
@@ -47,14 +53,15 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={NAV_SCROLL_OFFSET}
               onSetActive={() => {
                 setActiveLink("feature");
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "feature"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
+                  ? " text-primary animation-active "
+                  : " text-black-500 hover:text-primary ")
               }
             >
               Layanan Kami
@@ -65,14 +72,15 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={NAV_SCROLL_OFFSET}
               onSetActive={() => {
                 setActiveLink("reason");
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "reason"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
+                  ? " text-primary animation-active "
+                  : " text-black-500 hover:text-primary ")
               }
             >
               Alasan
@@ -83,17 +91,18 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={NAV_SCROLL_OFFSET}
               onSetActive={() => {
                 setActiveLink("testimoni");
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "testimoni"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
+                  ? " text-primary animation-active "
+                  : " text-black-500 hover:text-primary ")
               }
             >
-              Testimoni Kami
+              Testimoni
             </LinkScroll>
             <LinkScroll
               activeClass="active"
@@ -101,14 +110,15 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={NAV_SCROLL_OFFSET}
               onSetActive={() => {
                 setActiveLink("contact");
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "contact"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
+                  ? " text-primary animation-active "
+                  : " text-black-500 hover:text-primary ")
               }
             >
               Hubungi Kami
@@ -116,7 +126,7 @@ const Header = () => {
           </ul>
           {/* <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
             <Link href="/">
-              <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all">
+              <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-primary transition-all">
                   Sign In
               </a>
             </Link>
@@ -140,13 +150,14 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={NAV_SCROLL_OFFSET}
               onSetActive={() => {
                 setActiveLink("about");
               }}
               className={
                 "flex-1 min-w-[54px] max-w-[70px] flex-shrink-0 mx-0 px-1 py-2 flex flex-col items-center text-[10px] border-t-2 transition-all text-center whitespace-nowrap" +
                 (activeLink === "about"
-                  ? " border-orange-500 text-orange-500"
+                  ? " border-primary text-primary"
                   : " border-transparent")
               }
             >
@@ -172,13 +183,14 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={NAV_SCROLL_OFFSET}
               onSetActive={() => {
                 setActiveLink("feature");
               }}
               className={
                 "flex-1 min-w-[54px] max-w-[70px] flex-shrink-0 mx-0 px-1 py-2 flex flex-col items-center text-[10px] border-t-2 transition-all text-center whitespace-nowrap" +
                 (activeLink === "feature"
-                  ? " border-orange-500 text-orange-500"
+                  ? " border-primary text-primary"
                   : " border-transparent")
               }
             >
@@ -204,17 +216,18 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={NAV_SCROLL_OFFSET}
               onSetActive={() => {
                 setActiveLink("reason");
               }}
               className={
                 "flex-1 min-w-[54px] max-w-[70px] flex-shrink-0 mx-0 px-1 py-2 flex flex-col items-center text-[10px] border-t-2 transition-all text-center whitespace-nowrap" +
                 (activeLink === "reason"
-                  ? " border-orange-500 text-orange-500"
+                  ? " border-primary text-primary"
                   : " border-transparent")
               }
             >
-              <MessageCircleQuestionMark className="w-5 h-5" />
+              <FontAwesomeIcon icon={faCircleQuestion} className="w-5 h-5" />
               Alasan
             </LinkScroll>
             <LinkScroll
@@ -223,13 +236,14 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={NAV_SCROLL_OFFSET}
               onSetActive={() => {
                 setActiveLink("testimoni");
               }}
               className={
                 "flex-1 min-w-[54px] max-w-[70px] flex-shrink-0 mx-0 px-1 py-2 flex flex-col items-center text-[10px] border-t-2 transition-all text-center whitespace-nowrap" +
                 (activeLink === "testimoni"
-                  ? " border-orange-500 text-orange-500"
+                  ? " border-primary text-primary"
                   : " border-transparent")
               }
             >
@@ -255,13 +269,14 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={1000}
+              offset={NAV_SCROLL_OFFSET}
               onSetActive={() => {
                 setActiveLink("contact");
               }}
               className={
                 "flex-1 min-w-[54px] max-w-[70px] flex-shrink-0 mx-0 px-1 py-2 flex flex-col items-center text-[10px] border-t-2 transition-all text-center whitespace-nowrap" +
                 (activeLink === "contact"
-                  ? " border-orange-500 text-orange-500"
+                  ? " border-primary text-primary"
                   : " border-transparent")
               }
             >

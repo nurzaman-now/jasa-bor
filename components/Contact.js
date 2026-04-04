@@ -1,12 +1,15 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faMapLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const DEFAULT_MAP_QUERY = "-6.175392,106.827153";
 
 const Contact = ({
-  phoneDisplay = "+62 8xx-xxxx-xxxx",
-  phoneHref = "tel:+6280000000000",
-  whatsappHref = "https://wa.me/6280000000000",
-  email = "halo@example.com",
+  phoneDisplay = "+62 857-1293-5347",
+  phoneHref = "tel:+6285712935347",
+  whatsappHref = "https://wa.me/6285712935347",
+  email = "gojlagyee@gmail.com",
   address = "Alamat belum diatur",
   mapQuery = DEFAULT_MAP_QUERY,
 }) => {
@@ -19,14 +22,15 @@ const Contact = ({
   )}&z=15`;
 
   return (
-    <section className="w-full py-14" id="contact">
+    <section className="w-full py-14 scroll-mt-[100px]" id="contact">
       <div className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto">
         <div className="flex flex-col w-full text-center justify-center">
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 leading-relaxed">
             Hubungi Kami
           </h3>
           <p className="leading-normal w-10/12 sm:w-7/12 lg:w-6/12 mx-auto my-2 text-center text-black-500">
-            Konsultasi kebutuhan service pompa air dan dapatkan penawaran terbaik.
+            Konsultasi kebutuhan service pompa air dan dapatkan penawaran
+            terbaik.
           </p>
         </div>
 
@@ -37,7 +41,7 @@ const Contact = ({
                 <p className="text-sm text-black-500">Telepon</p>
                 <a
                   href={phoneHref}
-                  className="text-lg text-black-600 font-medium hover:text-orange-500 transition-all"
+                  className="text-lg text-black-600 font-medium hover:text-primary transition-all"
                 >
                   {phoneDisplay}
                 </a>
@@ -49,8 +53,13 @@ const Contact = ({
                   href={whatsappHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-lg text-black-600 font-medium hover:text-orange-500 transition-all"
+                  className="inline-flex items-center gap-2 text-lg text-black-600 font-medium hover:text-green-500 transition-all"
                 >
+                  <FontAwesomeIcon
+                    icon={faWhatsapp}
+                    className="h-5 w-5"
+                    aria-hidden
+                  />
                   Chat via WhatsApp
                 </a>
               </div>
@@ -59,7 +68,7 @@ const Contact = ({
                 <p className="text-sm text-black-500">Email</p>
                 <a
                   href={`mailto:${email}`}
-                  className="text-lg text-black-600 font-medium hover:text-orange-500 transition-all break-all"
+                  className="text-lg text-black-600 font-medium hover:text-primary transition-all break-all"
                 >
                   {email}
                 </a>
@@ -76,23 +85,44 @@ const Contact = ({
                 href={whatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto text-center py-3 px-8 rounded-lg bg-orange-500 text-white-500 hover:bg-orange-600 transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-3 px-8 rounded-lg bg-green-500 text-white-500 transition-all"
               >
-                WhatsApp
+                <span className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faWhatsapp}
+                    className="h-5 w-5"
+                    aria-hidden
+                  />
+                  <span>WhatsApp</span>
+                </span>
               </a>
               <a
                 href={phoneHref}
-                className="w-full sm:w-auto text-center py-3 px-8 rounded-lg border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white-500 transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-3 px-8 rounded-lg border-2 border-primary text-primary hover:bg-primary hover:text-white-500 transition-all"
               >
-                Telepon
+                <span className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faPhone}
+                    className="h-5 w-5"
+                    aria-hidden
+                  />
+                  <span>Telepon</span>
+                </span>
               </a>
               <a
                 href={mapOpenHref}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto text-center py-3 px-8 rounded-lg border-2 border-gray-500 text-black-600 hover:border-orange-500 hover:text-orange-500 transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-3 px-8 rounded-lg border-2 border-gray-500 text-black-600 hover:border-primary hover:text-primary transition-all"
               >
-                Buka Maps
+                <span className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faMapLocationDot}
+                    className="h-5 w-5"
+                    aria-hidden
+                  />
+                  <span>Maps</span>
+                </span>
               </a>
             </div>
           </div>
