@@ -68,12 +68,9 @@ const Reason = () => {
     "Dan lain sebagainya",
   ];
   return (
-    <div
-      className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14 scroll-mt-[100px]"
-      id="reason"
-    >
+    <div className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14">
       <div className="max-w-screen-xl  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full scroll-mt-[100px]" id="reason">
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
@@ -121,7 +118,10 @@ const Reason = () => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col w-full my-16" id="problems-solution">
+        <div
+          className="flex flex-col w-full my-16 scroll-mt-[100px]"
+          id="problems-solution"
+        >
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}

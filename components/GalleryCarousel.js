@@ -110,10 +110,13 @@ const GalleryCarousel = ({ slides = defaultSlides }) => {
             {slides.map((slide, index) => (
               <div
                 key={`${index}-${slide.src}`}
-                className="px-1 sm:px-1.5 lg:px-2 outline-none !h-auto"
+                className="px-1 sm:px-1.5 lg:px-2 outline-none h-auto"
               >
-                <div className="relative w-full max-w-[min(100%,320px)] sm:max-w-none mx-auto rounded-xl overflow-hidden border-2 border-gray-500 bg-gray-100 shadow-sm">
-                  <div className="relative w-full pb-[133.333%]">
+                <div className="relative w-full max-w-xs sm:max-w-none mx-auto rounded-xl overflow-hidden border-2 border-gray-500 bg-gray-100 shadow-sm">
+                  <div
+                    className="relative w-full"
+                    style={{ paddingBottom: "133.333%" }}
+                  >
                     <div className="absolute inset-0">
                       <Image
                         src={slide.src}
