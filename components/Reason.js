@@ -133,9 +133,12 @@ const Reason = () => {
               className="leading-normal  mx-auto my-2 w-10/12 sm:w-7/12 lg:w-6/12"
               variants={scrollAnimation}
             >
-              Kami memahami bahwa setiap masalah memiliki solusi yang berbeda.
-              Oleh karena itu, kami selalu berusaha untuk memberikan solusi yang
-              tepat dan efisien untuk setiap masalah yang Anda hadapi.
+              Serahkan masalah air Anda kepada tangan yang tepat. Kami
+              mengedepankan <b>transparansi di setiap langkah</b>, mulai dari
+              diagnosa hingga pengerjaan tuntas.{" "}
+              <b>Kepercayaan Anda adalah prioritas kami</b>, itulah mengapa kami
+              memastikan setiap solusi yang kami berikan adalah investasi jangka
+              panjang yang aman bagi keluarga atau bisnis Anda.
             </motion.p>
           </ScrollAnimationWrapper>
           <div className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto scroll-mt-[100px]">
