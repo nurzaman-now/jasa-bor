@@ -165,7 +165,7 @@ const Header = () => {
                   : " text-black-500 hover:text-primary ")
               }
             >
-              Hubungi Kami
+              Kontak
             </LinkScroll>
           </ul>
           {/* <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
@@ -286,7 +286,7 @@ const Header = () => {
               }
             >
               <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
-              Hubungi Kami
+              Kontak
             </LinkScroll>
           </ul>
         </div>

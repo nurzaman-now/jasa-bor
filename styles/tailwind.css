@@ -66,6 +66,14 @@ li.check:before {
   @apply bg-primary w-8 rounded-full;
 }
 
+/* Slick + konten tinggi-dari-aspect sering dapat height:0 di mobile → gambar hilang, border saja */
+.gallery-slick .slick-slide {
+  height: auto !important;
+}
+.gallery-slick .slick-slide > div {
+  height: auto;
+}
+
 /* purgecss end ignore */
 @tailwind utilities;
 /* purgecss start ignore */

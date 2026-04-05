@@ -46,6 +46,7 @@ const GalleryCarousel = ({ slides = defaultSlides }) => {
       speed: 500,
       slidesToShow: showDesktop,
       slidesToScroll: 1,
+      adaptiveHeight: true,
       autoplay: slideCount > 1,
       autoplaySpeed: 5500,
       pauseOnHover: true,
@@ -57,6 +58,7 @@ const GalleryCarousel = ({ slides = defaultSlides }) => {
             slidesToShow: showTablet,
             slidesToScroll: 1,
             infinite: slideCount > showTablet,
+            adaptiveHeight: true,
           },
         },
         {
@@ -65,6 +67,7 @@ const GalleryCarousel = ({ slides = defaultSlides }) => {
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: slideCount > 1,
+            adaptiveHeight: true,
           },
         },
       ],
@@ -107,17 +110,21 @@ const GalleryCarousel = ({ slides = defaultSlides }) => {
             {slides.map((slide, index) => (
               <div
                 key={`${index}-${slide.src}`}
-                className="px-1 sm:px-1.5 lg:px-2 outline-none h-full"
+                className="px-1 sm:px-1.5 lg:px-2 outline-none !h-auto"
               >
-                <div className="relative w-full max-w-[min(100%,280px)] sm:max-w-none mx-auto aspect-[3/4] rounded-xl overflow-hidden border-2 border-gray-500 bg-white-500 shadow-sm">
-                  <Image
-                    src={slide.src}
-                    alt={slide.alt}
-                    layout="fill"
-                    className="object-cover object-center"
-                    sizes="(max-width: 640px) 90vw, (max-width: 1023px) 30vw, 18vw"
-                    priority={index === 0}
-                  />
+                <div className="relative w-full max-w-[min(100%,320px)] sm:max-w-none mx-auto rounded-xl overflow-hidden border-2 border-gray-500 bg-gray-100 shadow-sm">
+                  <div className="relative w-full pb-[133.333%]">
+                    <div className="absolute inset-0">
+                      <Image
+                        src={slide.src}
+                        alt={slide.alt}
+                        layout="fill"
+                        className="object-cover object-center"
+                        sizes="(max-width: 640px) 85vw, (max-width: 1023px) 32vw, 20vw"
+                        priority={index === 0}
+                      />
+                    </div>
+                  </div>
                 </div>
                 {slide.caption ? (
                   <p className="text-center mt-3 text-black-500 text-xs sm:text-sm px-1">
