@@ -16,7 +16,7 @@ export default function Home() {
         <Feature />
         <Reason />
         <GalleryCarousel />
-        <Testimoni />
+        {/* <Testimoni /> */}
         <Contact />
       </Layout>
     </>
