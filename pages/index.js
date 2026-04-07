@@ -1,11 +1,11 @@
 import Feature from "../components/Feature";
-import GalleryCarousel from "../components/GalleryCarousel";
+import Gallery from "../components/Gallery";
 import Reason from "../components/Reason";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout/Layout";
 import SeoHead from "../components/SeoHead";
 import Contact from "../components/Contact";
-import Testimoni from "../components/Testimoni";
+// import Testimoni from "../components/Testimoni";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         <Hero />
         <Feature />
         <Reason />
-        <GalleryCarousel />
+        <Gallery />
         {/* <Testimoni /> */}
         <Contact />
       </Layout>
