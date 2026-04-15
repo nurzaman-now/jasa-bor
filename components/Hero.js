@@ -15,12 +15,12 @@ const Hero = ({
   listUser = [
     {
       name: "Kustomer",
-      number: "390",
+      number: "500",
       icon: <FontAwesomeIcon icon={faUser} className="text-primary w-6 h-6" />,
     },
     {
       name: "Proyek",
-      number: "20",
+      number: "40",
       icon: (
         <FontAwesomeIcon
           icon={faLocationDot}
@@ -30,7 +30,7 @@ const Hero = ({
     },
     {
       name: "Pengalaman",
-      number: "50 Tahun",
+      number: "6 Tahun",
       icon: (
         <FontAwesomeIcon icon={faBriefcase} className="text-primary w-6 h-6" />
       ),
