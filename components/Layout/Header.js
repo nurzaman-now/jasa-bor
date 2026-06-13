@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link as LinkScroll } from "react-scroll";
-import Logo from "../../public/assets/Logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleQuestion,
@@ -9,7 +8,7 @@ import {
   faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-
+import Logo from "../../public/assets/Logo.svg";
 /** Jarak dari tepi atas viewport untuk semua anchor scroll (react-scroll: nilai negatif). */
 const NAV_SCROLL_OFFSET = -100;
 
@@ -31,7 +30,7 @@ const Header = () => {
       >
         <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
           <div className="col-start-1 col-end-2 flex items-center">
-            <Logo className="h-8 w-auto" />
+            <Logo className="h-8 w-8" />
           </div>
           <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
             <LinkScroll

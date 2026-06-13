@@ -25,9 +25,9 @@ module.exports = {
         600: "#0B132A",
       },
       primary: {
-        DEFAULT: "#EAB308",
-        100: "#FEF9C3",
-        600: "#CA8A04",
+        DEFAULT: "#005FC9",
+        100: "#86C5F9",
+        600: "#005FC9",
       },
       green: {
         500: "#2FAB73",

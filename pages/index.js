@@ -10,7 +10,7 @@ import Contact from "../components/Contact";
 export default function Home() {
   return (
     <>
-      <SeoHead title="Service Pompa Air" />
+      <SeoHead title="Cahya Teknik" />
       <Layout>
         <Hero />
         <Feature />

@@ -128,7 +128,7 @@ const favicons = [
   },
   {
     rel: "manifest",
-    href: "/site.webmanifest",
+    href: "/favicon/site.webmanifest",
   },
 ];
 
