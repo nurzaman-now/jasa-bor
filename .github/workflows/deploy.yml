@@ -1,0 +1,37 @@
+name: Deploy Website to RumahHosting
+
+on:
+  push:
+    branches:
+      - main # Jalankan otomatis setiap kali push ke branch main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22' # Sesuaikan dengan versi Node.js di laptop Anda
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Static Site
+        run: npm run build # Menghasilkan folder 'out'
+
+      - name: Deploy via FTPS to RumahHosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: ./ # Langsung ke root public_html karena akun FTP sudah dikunci ke folder tersebut
+          protocol: ftps
+          port: 21
