@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export', // <--- BARIS INI WAJIB ADA agar folder 'out' tercipta
+    output: 'export',
     images: {
-        unoptimized: true, // <--- Wajib untuk ekspor statis agar gambar tidak error di hosting biasa
+        unoptimized: true,
     },
 };
 
-export default nextConfig;
+if (typeof module !== 'undefined') {
+    module.exports = nextConfig;
+} else {
+    export default nextConfig;
+}
