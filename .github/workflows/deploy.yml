@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Build Static Site
-        run: npm run build # Menghasilkan folder 'out'
+        run: npm run export # Menghasilkan folder 'out'
 
       - name: Deploy via FTPS to RumahHosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
