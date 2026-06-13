@@ -154,7 +154,7 @@ const Reason = () => {
                   <ul className="text-black-500 self-start list-inside">
                     {problems.map((problem, index) => (
                       <motion.li
-                        className="relative circle-check custom-list text-left"
+                        className="relative text-left"
                         custom={{ duration: 2 + index }}
                         variants={scrollAnimation}
                         key={problem}
@@ -188,7 +188,7 @@ const Reason = () => {
                   <ul className="text-black-500 self-start list-inside">
                     {solutions.map((solution, index) => (
                       <motion.li
-                        className="relative circle-check custom-list text-left"
+                        className="relative text-left"
                         custom={{ duration: 2 + index }}
                         variants={scrollAnimation}
                         key={solution}

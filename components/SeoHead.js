@@ -6,7 +6,7 @@ const defaultMeta = {
   title: "Cahya Teknik - Jasa Bor Air & Service Pompa Air",
   siteName: "Cahya Teknik",
   description: "Cahya Teknik melayani jasa bor air standar/dalam, service mesin pompa air, pasang instalasi pipa air, pasang toren, filter air, dan arde penangkal petir profesional di Jabodetabek.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://cahyateknik.my.id",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://servispompa.my.id",
   type: "website",
   robots: "follow, index",
   image: "/assets/card-image.png",
