@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    unoptimized: true, // Agar optimasi gambar Next.js tetap bekerja di hosting biasa (static export)
-  },
+    output: 'export', // <--- BARIS INI WAJIB ADA agar folder 'out' tercipta
+    images: {
+        unoptimized: true, // <--- Wajib untuk ekspor statis agar gambar tidak error di hosting biasa
+    },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
