@@ -3,23 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faMapLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 
-/** Koordinat dari https://maps.app.goo.gl/nEKv1bRi7yBQ8c1m6 (untuk iframe embed). */
-const DEFAULT_MAP_EMBED_QUERY = "-6.1882864,106.8917371";
-
-/** Tautan dibagikan / dibuka di aplikasi Maps. */
-const DEFAULT_MAPS_SHARE_URL = "https://maps.app.goo.gl/nEKv1bRi7yBQ8c1m6";
-
-const DEFAULT_ADDRESS =
-  "Jl. Kayu Putih Selatan No. 60, RT.6/RW.6, Pulo Gadung, Kec. Pulo Gadung, Jakarta Timur 13210";
-
 const Contact = ({
-  phoneDisplay = "+62 857-1293-5347",
-  phoneHref = "tel:+6285712935347",
-  whatsappHref = "https://wa.me/6285712935347",
-  email = "gojlagyee@gmail.com",
-  address = DEFAULT_ADDRESS,
-  mapsShareUrl = DEFAULT_MAPS_SHARE_URL,
-  mapEmbedQuery = DEFAULT_MAP_EMBED_QUERY,
+  phoneDisplay = process.env.NEXT_PUBLIC_PHONE_DISPLAY || "",
+  phoneHref = process.env.NEXT_PUBLIC_PHONE_HREF || "",
+  whatsappHref = process.env.NEXT_PUBLIC_WHATSAPP_HREF || "",
+  email = process.env.NEXT_PUBLIC_EMAIL || "",
+  address = process.env.NEXT_PUBLIC_MAP_EMBED_QUERY || "",
+  mapsShareUrl = process.env.NEXT_PUBLIC_MAPS_SHARE_URL || "",
+  mapEmbedQuery = process.env.NEXT_PUBLIC_MAP_EMBED_QUERY || "",
 }) => {
   const mapEmbedSrc = `https://www.google.com/maps?q=${encodeURIComponent(
     mapEmbedQuery,
