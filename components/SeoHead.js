@@ -3,14 +3,15 @@ import { useRouter } from "next/router";
 
 // Default value for some meta data
 const defaultMeta = {
-  title: "Jasa-Bor",
-  siteName: "Jasa-Bor",
-  description: "",
-  url: "/",
+  title: "Cahya Teknik - Jasa Bor Air & Service Pompa Air",
+  siteName: "Cahya Teknik",
+  description: "Cahya Teknik melayani jasa bor air standar/dalam, service mesin pompa air, pasang instalasi pipa air, pasang toren, filter air, dan arde penangkal petir profesional di Jabodetabek.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://cahyateknik.my.id",
   type: "website",
   robots: "follow, index",
   image: "/assets/card-image.png",
   author: "Nurz",
+  googleVerification: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "",
 };
 
 /**
@@ -26,6 +27,7 @@ const defaultMeta = {
  * - date
  * - author
  * - templateTitle
+ * - googleVerification
  * all field are optional (default value defined on defaultMeta)
  * @example
  * <SeoHead title="Page's Title" />
@@ -46,6 +48,9 @@ const SeoHead = (props) => {
   return (
     <Head>
       <title>{meta.title}</title>
+      {meta.googleVerification && (
+        <meta name="google-site-verification" content={meta.googleVerification} />
+      )}
       <meta name="robots" content={meta.robots} />
       <meta content={meta.description} name="description" />
       <meta property="og:url" content={`${meta.url}${router.asPath}`} />

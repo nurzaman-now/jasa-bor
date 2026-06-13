@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cahyateknik.my.id/sitemap.xml

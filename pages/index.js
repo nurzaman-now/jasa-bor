@@ -10,7 +10,7 @@ import Contact from "../components/Contact";
 export default function Home() {
   return (
     <>
-      <SeoHead title="Cahya Teknik" />
+      <SeoHead />
       <Layout>
         <Hero />
         <Feature />
